@@ -1,5 +1,5 @@
 # Tutorial 
-Tutorial: https://connect.unity.com/p/google-s-seurat-rendering-hdrp
+Tutorial: https://www.babilinapps.com/portfolio/googles-seurat-rendering-hdrp/
 
 # Compiled Seurat 
 Compiled Seurat Repo: https://github.com/ddiakopoulos/seura...
