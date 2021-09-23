@@ -22,6 +22,9 @@ Shader "GoogleVR/Seurat/AlphaBlended"
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
+		[Toggle(_CLIP_DISTANCE)]
+		_ClipDistanceKeyword("Clip By Distance", Float) = 0
+		_ClipDistance("Clipping Distance", Float) = 10
 	}
 	SubShader
 	{
@@ -36,7 +39,7 @@ Shader "GoogleVR/Seurat/AlphaBlended"
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-
+			#pragma multi_compile __ _CLIP_DISTANCE
 			
 			#include "UnityCG.cginc"
 
@@ -57,6 +60,7 @@ Shader "GoogleVR/Seurat/AlphaBlended"
 			};
 
 			sampler2D _MainTex;
+			float _ClipDistance;
 			
 			v2f vert (appdata v)
 			{
@@ -65,6 +69,10 @@ Shader "GoogleVR/Seurat/AlphaBlended"
 			    UNITY_SETUP_INSTANCE_ID(v); //Insert
 			    UNITY_INITIALIZE_OUTPUT(v2f, o); //Insert
 			    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); //Insert
+
+				#ifdef _CLIP_DISTANCE
+				if(length(v.vertex) > _ClipDistance) v.vertex = 0.0 / 0.0;
+				#endif
 				
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.uv = v.uv;
