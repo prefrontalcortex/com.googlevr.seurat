@@ -4,6 +4,12 @@ Seurat is a scene simplification technology designed to process very complex 3D 
 
 This document covers how to import Seurat meshes into Unity. To learn more about the Seurat pipeline, visit the main [Seurat GitHub page](https://github.com/googlevr/seurat).
 
+## Additions by @hybridherbst / prefrontal cortex
+- Restructured as UPM package.  
+- Fixed output shaders not supporting Single-Pass Instanced rendering
+- Precompiled Seurat executable download link: https://github.com/ddiakopoulos/seurat/releases  
+- Same executable embedded here: [seurat-compiled-msvc2017-x64.zip](Documentation~/seurat-compiled-msvc2017-x64.zip)
+
 ## Introduction
 
 This document is organized into two sections. The first describes the steps to
@@ -82,8 +88,8 @@ meshes.
 ## Diagnosing Cracks
 This section illustrates what crack artifacts may appear, and lists many Unity
 settings that can trigger these artifacts.
-![Example of cracks in Unity](images/cracks_01.png)
-![Example of cracks in Unity](images/cracks_02.png)
+![Example of cracks in Unity](Documentation~/images/cracks_01.png)
+![Example of cracks in Unity](Documentation~/images/cracks_02.png)
 
 ### Determine the cause
 The easiest way to determine the cause of crack or gap artifacts in Seurat
