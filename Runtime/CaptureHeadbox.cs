@@ -121,8 +121,9 @@ public class CaptureHeadbox : MonoBehaviour {
       StartCapture();
     }
   }
-
   void StartCapture() {
+    
+#if UNITY_EDITOR
     Debug.Log("Capture start - temporarily setting fixed framerate.", this);
     capture_ = new CaptureBuilder();
 
@@ -143,6 +144,7 @@ public class CaptureHeadbox : MonoBehaviour {
     // See Time.CaptureFramerate example, e.g. here:
     // https://docs.unity3d.com/ScriptReference/Time-captureFramerate.html
     Time.captureFramerate = 60;
+  #endif
   }
 
   void StopCapture() {
