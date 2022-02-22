@@ -39,6 +39,8 @@ public class MaterialPropertyValues
     //Cache the material values.
     public MaterialPropertyValues(Material material)
     {
+        if (!material) return;
+        
         propertyBlock = new MaterialPropertyBlock();
 
         Material mat = material;
@@ -64,6 +66,7 @@ public class MaterialPropertyValues
 
     public void SetValues(Renderer renderer, int index)
     {
-        renderer.SetPropertyBlock(propertyBlock, index);
+        if(renderer.HasPropertyBlock())
+            renderer.SetPropertyBlock(propertyBlock, index);
     }
 }

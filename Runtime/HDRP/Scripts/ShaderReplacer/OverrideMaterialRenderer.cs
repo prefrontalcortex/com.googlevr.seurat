@@ -21,10 +21,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 using UnityEngine;
 #if UNITY_RENDER_PIPELINE_HDRP
-using UnityEngine.Experimental.Rendering.HDPipeline;
-using UnityEngine.Experimental.Rendering;
+using UnityEngine.Rendering;
 #endif
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 //Component that adds a custom render event to the camera data. A work around for the "render with shader" function that doesn't work in HDRP.
 [ExecuteAlways]
